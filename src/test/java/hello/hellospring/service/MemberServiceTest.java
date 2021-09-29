@@ -7,11 +7,13 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest
+@Transactional
 class MemberServiceTest {
     @Autowired
     MemberService memberService;
@@ -25,6 +27,8 @@ class MemberServiceTest {
 
     @Test
     public void 회원가입() throws Exception {
+        System.out.println("--------------------------->>start");
+
         //given : 이러한상황이 주어져서
         Member member = new Member();
         member.setName("홍길동");
@@ -35,6 +39,8 @@ class MemberServiceTest {
         //then : 이러한 결과가 나온다.
         Member findMember = memberService.findOne(member.getId()).get();
         assertThat(member.getName()).isEqualTo(findMember.getName());
+
+        System.out.println("--------------------------->>end");
     }
 
     @Test

@@ -17,13 +17,13 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 class MemberServiceTest {
     @Autowired
     MemberService memberService;
-    @Autowired
-    MemberRepository memberRepository;
+//    @Autowired
+//    MemberRepository memberRepository;
 
-    @AfterEach
-    public void afterEach() {
-        memberRepository.clearStore();
-    }
+//    @AfterEach
+//    public void afterEach() {
+//        memberRepository.clearStore();
+//    }
 
     @Test
     public void 회원가입() throws Exception {

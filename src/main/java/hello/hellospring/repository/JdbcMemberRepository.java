@@ -13,7 +13,7 @@ import java.util.Optional;
 
 
 @SuppressWarnings("SpellCheckingInspection")
-@Repository
+//@Repository
 public class JdbcMemberRepository implements MemberRepository {
 
     private final DataSource dataSource;
